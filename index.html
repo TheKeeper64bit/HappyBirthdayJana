@@ -838,9 +838,13 @@
       .corner-flower{opacity:.55}
 
       /* Mobile reveal: center against the viewport, not the cake section. */
+      body.celebrated .cake-scene{
+        isolation:auto;
+      }
+
       body.celebrated .birthday-letter{
         position:fixed;
-        z-index:90;
+        z-index:120;
         left:50%;
         top:50%;
         width:min(500px,calc(100vw - 34px));
@@ -919,28 +923,35 @@
       #statusText{font-size:15px}
 
       .cake-scene{
-        width:100%;
+        width:100vw;
+        max-width:none;
         min-height:520px;
-        margin:0 auto;
+        left:50%;
+        margin:0 0 0 -50vw;
         overflow:visible;
+        place-items:center;
       }
 
       .paper-oval{
-        width:min(510px,118vw);
+        width:min(500px,112vw);
         height:500px;
+        left:50%;
+        transform:translateX(-50%) rotate(2deg);
       }
 
       .checker{
-        width:500px;
+        width:min(500px,112vw);
         height:500px;
+        left:50%;
+        transform:translateX(-50%) rotate(-7deg);
       }
 
       .cake-wrap{
-        width:min(500px,112vw);
+        width:min(500px,108vw);
         height:500px;
-        margin:18px 0 0;
-        left:50%;
-        transform:translateX(-50%);
+        margin:18px auto 0;
+        left:auto;
+        transform:none;
       }
 
       .candles{
@@ -955,15 +966,15 @@
       }
 
       .cake-caption{
-        width:118px;
+        width:116px;
         font-size:13px;
-        top:47px;
-        right:2px;
+        top:50px;
+        right:max(8px,calc(50vw - 205px));
       }
 
       .cake-caption.bottom{
-        bottom:58px;
-        left:2px;
+        bottom:61px;
+        left:max(8px,calc(50vw - 205px));
       }
 
       .poem-letter{
@@ -1006,6 +1017,54 @@
       .corner-flower{width:118px}
     }
 
+
+    @media(max-width:430px){
+      .masthead{
+        left:24px;
+        right:24px;
+      }
+
+      .story{
+        width:100%;
+      }
+
+      .scrap-row{
+        transform:scale(.80);
+        margin-bottom:-20px;
+      }
+
+      .ritual{
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+      }
+
+      .wish-button{
+        margin-inline:auto;
+      }
+
+      .status-card{
+        width:min(286px,100%);
+        max-width:286px;
+        flex:none;
+        margin-inline:auto;
+      }
+
+      .blow-hearts{
+        justify-content:center;
+      }
+
+      .cake-wrap{
+        width:min(485px,108vw);
+      }
+
+      .cake-instruction{
+        max-width:88vw;
+        text-align:center;
+      }
+    }
+
     @media(max-width:380px){
       .masthead .edition{display:none}
 
@@ -1037,8 +1096,11 @@
       }
 
       .cake-wrap{
-        width:118vw;
+        width:110vw;
+        max-width:470px;
         height:455px;
+        margin-left:auto;
+        margin-right:auto;
       }
 
       .candles{
@@ -1068,7 +1130,7 @@
     @media(max-width:900px){
       body.celebrated::before{
         inset:0;
-        z-index:82;
+        z-index:84;
         background:rgba(116,48,72,.18);
         box-shadow:none;
         backdrop-filter:blur(3px);
@@ -1076,7 +1138,7 @@
       }
 
       body.celebrated .page-frame{
-        z-index:95;
+        z-index:88;
       }
     }
 
