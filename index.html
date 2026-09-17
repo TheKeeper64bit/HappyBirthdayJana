@@ -766,151 +766,318 @@
       .experience{
         padding:108px 28px 42px;
       }
+
       .spread{
         grid-template-columns:1fr;
-        gap:5px;
+        gap:10px;
+        width:100%;
+        justify-items:center;
       }
+
       .story{
+        width:min(100%,620px);
+        margin-inline:auto;
         text-align:center;
       }
+
       .jana{
         transform:rotate(-2deg);
         transform-origin:center;
         font-size:clamp(92px,24vw,132px);
       }
+
       .birthday-type{
         font-size:clamp(38px,10vw,52px);
       }
+
       .intro{
         margin-inline:auto;
         max-width:560px;
       }
+
       .scrap-row{
         width:min(470px,100%);
         margin-inline:auto;
       }
+
       .ritual{
+        width:min(100%,520px);
+        margin-inline:auto;
         justify-content:center;
       }
+
       .status-card{text-align:left}
+
       .cake-scene{
+        width:min(100%,620px);
         min-height:600px;
-        margin-top:-12px;
+        margin:0 auto;
+        place-items:center;
       }
+
+      .cake-wrap{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .paper-oval,
+      .checker{
+        left:50%;
+      }
+
+      .paper-oval{
+        transform:translateX(-50%) rotate(2deg);
+      }
+
+      .checker{
+        transform:translateX(-50%) rotate(-7deg);
+      }
+
       .cake-caption{right:5%}
       .cake-caption.bottom{left:4%}
       .corner-flower{opacity:.55}
+
+      /* Mobile reveal: center against the viewport, not the cake section. */
+      body.celebrated .birthday-letter{
+        position:fixed;
+        z-index:90;
+        left:50%;
+        top:50%;
+        width:min(500px,calc(100vw - 34px));
+        max-height:calc(100svh - 36px);
+        margin:0;
+        opacity:1;
+        overflow:hidden;
+        pointer-events:auto;
+        transform:translate(-50%,-50%) rotate(-.6deg) scale(1);
+        box-shadow:0 24px 70px rgba(87,34,55,.28);
+      }
+
+      body.celebrated .birthday-letter::before{
+        inset:12px;
+      }
+
+      body.celebrated .poem{
+        max-height:calc(100svh - 245px);
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        -webkit-overflow-scrolling:touch;
+        padding-right:8px;
+      }
     }
 
     @media(max-width:540px){
       body{
         background-size:48px 100%;
       }
+
       .experience{
-        padding:104px 22px 34px;
+        padding:104px 20px 34px;
       }
+
+      .masthead{
+        left:26px;
+        right:26px;
+      }
+
       .special{font-size:10px}
       .intro{font-size:17px}
+
       .scrap-row{
+        width:430px;
+        max-width:none;
         height:135px;
-        transform:scale(.9);
+        margin-left:50%;
+        translate:-50% 0;
+        transform:scale(.86);
         transform-origin:top center;
-        margin-bottom:-3px;
+        margin-bottom:-12px;
       }
+
       .note.one{left:3px}
       .note.two{left:155px}
       .note.three{left:310px}
+
       .ritual{
         margin-top:0;
         gap:10px;
+        width:100%;
       }
+
       .wish-button{
-        width:115px;
-        height:115px;
-        flex-basis:115px;
+        width:112px;
+        height:112px;
+        flex:0 0 112px;
       }
+
       .status-card{
-        flex-basis:205px;
+        flex:1 1 190px;
+        max-width:260px;
         padding:16px 15px 13px 20px;
       }
+
       #statusText{font-size:15px}
+
       .cake-scene{
-        min-height:520px;
-        width:calc(100% + 24px);
-        margin-left:-12px;
-      }
-      .paper-oval{
-        width:112%;
-        height:510px;
-      }
-      .checker{
-        width:510px;
-        height:510px;
-      }
-      .cake-wrap{
         width:100%;
-        height:500px;
-        margin-top:20px;
+        min-height:520px;
+        margin:0 auto;
+        overflow:visible;
       }
+
+      .paper-oval{
+        width:min(510px,118vw);
+        height:500px;
+      }
+
+      .checker{
+        width:500px;
+        height:500px;
+      }
+
+      .cake-wrap{
+        width:min(500px,112vw);
+        height:500px;
+        margin:18px 0 0;
+        left:50%;
+        transform:translateX(-50%);
+      }
+
       .candles{
         top:101px;
         width:252px;
         transform:translateX(-50%) scale(.9);
       }
+
       .cake-instruction{
         bottom:20px;
         font-size:16px;
       }
+
       .cake-caption{
-        width:122px;
+        width:118px;
         font-size:13px;
-        top:41px;
-        right:-1px;
+        top:47px;
+        right:2px;
       }
+
       .cake-caption.bottom{
-        bottom:53px;
-        left:-1px;
+        bottom:58px;
+        left:2px;
       }
 
       .poem-letter{
-        width:min(420px,92vw);
-        padding-left:25px;
-        padding-right:25px;
-      }
-      .poem{
-        max-height:48vh;
-        padding:0 3px;
-      }
-      .poem p{
-        font-size:15px;
-        line-height:1.48;
-        margin-bottom:17px;
+        width:min(420px,calc(100vw - 28px));
+        padding:48px 24px 24px;
       }
 
-      .birthday-letter{
-        top:150px;
-        width:min(390px,91vw);
-        padding:53px 27px 28px;
-      }
       body.celebrated .birthday-letter{
-        transform:translate(-50%,-45px) rotate(-1deg) scale(1);
+        top:50%;
+        left:50%;
+        width:min(420px,calc(100vw - 24px));
+        max-height:calc(100svh - 24px);
+        padding:48px 23px 22px;
+        transform:translate(-50%,-50%) rotate(-.4deg) scale(1);
       }
-      .birthday-letter p{font-size:16px}
-      .bow-doodle{width:92px;right:-7px}
-      .lipstick-doodle{width:48px;left:3px}
-      .mirror-doodle{width:82px;right:-3px}
-      .corner-flower{width:125px}
+
+      body.celebrated .poem{
+        max-height:calc(100svh - 220px);
+        padding:0 5px 3px;
+      }
+
+      .poem p{
+        font-size:15px;
+        line-height:1.46;
+        margin-bottom:16px;
+      }
+
+      .birthday-letter h2{
+        font-size:clamp(48px,15vw,66px);
+        margin-bottom:12px;
+      }
+
+      .again{
+        margin-top:13px;
+      }
+
+      .bow-doodle{width:88px;right:2px}
+      .lipstick-doodle{width:46px;left:4px}
+      .mirror-doodle{width:76px;right:2px}
+      .corner-flower{width:118px}
     }
 
     @media(max-width:380px){
       .masthead .edition{display:none}
-      .scrap-row{transform:scale(.78);width:430px;margin-left:50%;translate:-50% 0;margin-bottom:-24px}
-      .ritual{flex-direction:column}
-      .status-card{width:100%}
-      .cake-scene{min-height:485px}
-      .cake-wrap{height:455px}
-      .candles{top:88px;transform:translateX(-50%) scale(.78)}
+
+      .experience{
+        padding-left:17px;
+        padding-right:17px;
+      }
+
+      .scrap-row{
+        width:430px;
+        margin-left:50%;
+        translate:-50% 0;
+        transform:scale(.76);
+        margin-bottom:-27px;
+      }
+
+      .ritual{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .status-card{
+        width:min(100%,280px);
+        max-width:280px;
+      }
+
+      .cake-scene{
+        min-height:475px;
+      }
+
+      .cake-wrap{
+        width:118vw;
+        height:455px;
+      }
+
+      .candles{
+        top:88px;
+        transform:translateX(-50%) scale(.78);
+      }
+
       .cake-caption{display:none}
+
+      body.celebrated .birthday-letter{
+        width:calc(100vw - 18px);
+        max-height:calc(100svh - 18px);
+        padding:44px 18px 18px;
+      }
+
+      body.celebrated .poem{
+        max-height:calc(100svh - 205px);
+      }
+
+      .poem p{
+        font-size:14.4px;
+        line-height:1.43;
+      }
+    }
+
+
+    @media(max-width:900px){
+      body.celebrated::before{
+        inset:0;
+        z-index:82;
+        background:rgba(116,48,72,.18);
+        box-shadow:none;
+        backdrop-filter:blur(3px);
+        -webkit-backdrop-filter:blur(3px);
+      }
+
+      body.celebrated .page-frame{
+        z-index:95;
+      }
     }
 
     @media(prefers-reduced-motion:reduce){
