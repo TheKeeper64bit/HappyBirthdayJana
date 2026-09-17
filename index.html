@@ -1,0 +1,1549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5c5d6">
+  <meta name="description" content="A handmade birthday wish for Jana.">
+  <title>For Jana — make a wish ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      color-scheme: light;
+
+      --paper:#fff8ef;
+      --paper-2:#fff3eb;
+      --pink-paper:#f8d9e2;
+      --pink:#ef7faa;
+      --pink-2:#f3a7c4;
+      --pink-3:#ffd0df;
+      --hot:#d9447c;
+      --red:#b84256;
+      --cherry:#a92f45;
+      --ink:#7e314b;
+      --ink-2:#995d70;
+      --green:#738f68;
+      --cream:#fffaf3;
+      --gold:#d8a653;
+      --line:#b9657f;
+
+      --serif:"Cormorant Garamond", Georgia, serif;
+      --sans:"DM Sans", Arial, sans-serif;
+      --script:"Great Vibes", cursive;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html{
+      min-height:100%;
+      background:#efc9d7;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      min-height:100svh;
+      overflow-x:hidden;
+      color:var(--ink);
+      font-family:var(--sans);
+
+      /* intentionally print-like, not glassmorphism */
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #efc9d7 0 36px,
+          #f8e9e6 36px 72px
+        );
+      isolation:isolate;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0 clamp(14px,4vw,64px);
+      z-index:-4;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.78), transparent 22%),
+        radial-gradient(circle at 80% 70%, rgba(247,205,216,.42), transparent 28%),
+        #fff9f0;
+      box-shadow:0 0 70px rgba(116,48,72,.08) inset;
+    }
+
+    /* subtle paper grain made in CSS rather than a glossy gradient */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:80;
+      pointer-events:none;
+      opacity:.08;
+      mix-blend-mode:multiply;
+      background-image:
+        repeating-radial-gradient(circle at 17% 31%, #8b5a66 0 .7px, transparent .8px 4px);
+      background-size:9px 9px;
+    }
+
+    .page-frame{
+      position:fixed;
+      z-index:70;
+      pointer-events:none;
+      inset:18px 22px;
+      border:1px solid rgba(150,66,91,.55);
+    }
+    .page-frame::after{
+      content:"";
+      position:absolute;
+      inset:5px;
+      border:1px solid rgba(150,66,91,.18);
+    }
+
+    .corner-flower{
+      position:fixed;
+      z-index:15;
+      width:170px;
+      pointer-events:none;
+      opacity:.9;
+      filter:drop-shadow(0 8px 5px rgba(108,49,68,.07));
+    }
+    .corner-flower.left{ left:-36px; bottom:-30px; transform:rotate(-7deg); }
+    .corner-flower.right{ right:-34px; top:68px; transform:scaleX(-1) rotate(-12deg); }
+
+    .masthead{
+      position:absolute;
+      top:44px;
+      left:max(7vw,42px);
+      right:max(7vw,42px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      z-index:20;
+      color:var(--ink);
+    }
+    .masthead .love{
+      font:italic 24px var(--serif);
+    }
+    .masthead .edition{
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .experience{
+      position:relative;
+      min-height:100svh;
+      padding:120px clamp(28px,6vw,88px) 56px;
+      display:grid;
+      place-items:center;
+    }
+
+    .spread{
+      width:min(1140px,100%);
+      display:grid;
+      grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);
+      gap:38px;
+      align-items:center;
+    }
+
+    /* LEFT — editorial / scrapbook */
+    .story{
+      position:relative;
+      z-index:8;
+      padding:16px 0 20px;
+    }
+
+    .special{
+      margin:0 0 13px;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+    }
+
+    .jana{
+      margin:0;
+      font-family:var(--script);
+      font-size:clamp(88px,11vw,150px);
+      line-height:.77;
+      font-weight:400;
+      letter-spacing:-.02em;
+      color:#c73f71;
+      text-shadow:0 2px 0 rgba(255,255,255,.7);
+      transform:rotate(-3deg);
+      transform-origin:left bottom;
+    }
+
+    .birthday-type{
+      margin:17px 0 0 4px;
+      font:400 clamp(37px,4.4vw,61px)/.92 var(--serif);
+      letter-spacing:-.035em;
+    }
+    .birthday-type em{
+      font-weight:400;
+    }
+
+    .intro{
+      width:min(470px,100%);
+      margin:22px 0 0 3px;
+      font:400 18px/1.58 var(--serif);
+      color:#7b4458;
+    }
+
+    .scrap-row{
+      position:relative;
+      height:145px;
+      margin:25px 0 5px;
+    }
+
+    .note{
+      position:absolute;
+      padding:17px 18px;
+      background:#fffdf5;
+      border:1px solid rgba(154,80,101,.25);
+      box-shadow:0 10px 18px rgba(115,53,74,.09);
+      font:italic 17px/1.25 var(--serif);
+    }
+    .note::before{
+      content:"";
+      position:absolute;
+      width:68px;
+      height:20px;
+      left:50%;
+      top:-11px;
+      transform:translateX(-50%) rotate(-3deg);
+      background:rgba(239,173,196,.53);
+      border-left:1px dashed rgba(125,65,84,.16);
+      border-right:1px dashed rgba(125,65,84,.16);
+    }
+    .note.one{
+      left:0;
+      top:12px;
+      width:205px;
+      transform:rotate(-3deg);
+    }
+    .note.two{
+      left:185px;
+      top:35px;
+      width:195px;
+      transform:rotate(3.3deg);
+      background:#f8dbe5;
+    }
+    .note.three{
+      left:352px;
+      top:0;
+      width:110px;
+      text-align:center;
+      font-size:15px;
+      transform:rotate(-5deg);
+      background:#fff7d9;
+    }
+
+    .ritual{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .wish-button{
+      position:relative;
+      width:132px;
+      height:132px;
+      flex:0 0 132px;
+      border:0;
+      border-radius:50%;
+      cursor:pointer;
+      color:#fffaf4;
+      background:#b43f61;
+      box-shadow:
+        0 13px 18px rgba(93,34,54,.18),
+        inset 0 0 0 3px rgba(255,235,225,.34),
+        inset 0 0 0 7px rgba(131,40,67,.16);
+      transform:rotate(-4deg);
+      transition:transform .18s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .wish-button:hover{
+      transform:rotate(-2deg) translateY(-3px);
+      box-shadow:
+        0 17px 24px rgba(93,34,54,.22),
+        inset 0 0 0 3px rgba(255,235,225,.34),
+        inset 0 0 0 7px rgba(131,40,67,.16);
+    }
+    .wish-button:active{ transform:rotate(-2deg) scale(.98); }
+    .wish-button::before{
+      content:"♡";
+      display:block;
+      font:400 34px Georgia,serif;
+      margin-bottom:2px;
+    }
+    .wish-button span{
+      display:block;
+      max-width:90px;
+      margin:auto;
+      font-size:10px;
+      font-weight:700;
+      line-height:1.22;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .status-card{
+      position:relative;
+      flex:1 1 235px;
+      max-width:350px;
+      min-height:102px;
+      padding:20px 20px 16px 24px;
+      background:#f8e8ee;
+      border:1px solid rgba(144,73,94,.24);
+      transform:rotate(1deg);
+      box-shadow:0 9px 20px rgba(113,51,71,.07);
+    }
+    .status-card::after{
+      content:"";
+      position:absolute;
+      left:-10px;
+      top:19px;
+      width:22px;
+      height:65px;
+      background:repeating-linear-gradient(
+        180deg,
+        transparent 0 7px,
+        rgba(131,69,89,.32) 7px 8px
+      );
+    }
+    #statusText{
+      display:block;
+      font:400 16px/1.35 var(--serif);
+    }
+    .status-label{
+      display:block;
+      margin-bottom:5px;
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      color:#9e6576;
+    }
+
+    .blow-hearts{
+      margin-top:13px;
+      display:flex;
+      gap:6px;
+      align-items:center;
+    }
+    .blow-hearts span{
+      font:400 21px/1 Georgia,serif;
+      color:#d6a9b7;
+      transition:.09s ease;
+    }
+    .blow-hearts span.hot{
+      color:#c73f71;
+      transform:scale(1.16);
+      text-shadow:0 0 8px rgba(218,75,126,.2);
+    }
+
+    /* RIGHT — crafted cake board */
+    .cake-scene{
+      position:relative;
+      min-height:660px;
+      display:grid;
+      place-items:center;
+      isolation:isolate;
+    }
+
+    .paper-oval{
+      position:absolute;
+      width:min(630px,102%);
+      height:610px;
+      border-radius:50%;
+      background:
+        radial-gradient(ellipse at center, #fffdf7 0 61%, #f6dedf 62% 63%, #fff8ef 64% 69%, transparent 70%);
+      z-index:-4;
+      transform:rotate(2deg);
+    }
+
+    .checker{
+      position:absolute;
+      z-index:-3;
+      width:610px;
+      height:610px;
+      border-radius:50%;
+      opacity:.25;
+      transform:rotate(-7deg);
+      background:
+        linear-gradient(45deg,#d34a78 25%,transparent 25%,transparent 75%,#d34a78 75%),
+        linear-gradient(45deg,#d34a78 25%,transparent 25%,transparent 75%,#d34a78 75%);
+      background-size:28px 28px;
+      background-position:0 0,14px 14px;
+      mask-image:radial-gradient(circle,transparent 0 54%,#000 55% 63%,transparent 64%);
+    }
+
+    .cake-caption{
+      position:absolute;
+      top:62px;
+      right:4px;
+      width:150px;
+      padding:13px 15px;
+      background:#fff7db;
+      border:1px solid rgba(157,88,82,.25);
+      transform:rotate(6deg);
+      box-shadow:0 9px 14px rgba(103,50,64,.07);
+      font:italic 15px/1.15 var(--serif);
+      text-align:center;
+      z-index:10;
+    }
+    .cake-caption::before{
+      content:"";
+      position:absolute;
+      left:30px;
+      right:30px;
+      height:17px;
+      top:-9px;
+      background:rgba(221,153,176,.54);
+      transform:rotate(-3deg);
+    }
+
+    .cake-caption.bottom{
+      top:auto;
+      right:auto;
+      left:10px;
+      bottom:72px;
+      background:#f6d7e2;
+      transform:rotate(-5deg);
+    }
+
+    .cake-wrap{
+      position:relative;
+      width:min(560px,98%);
+      height:570px;
+      margin-top:35px;
+      filter:drop-shadow(0 28px 22px rgba(105,39,62,.14));
+    }
+
+    .cake-svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      overflow:visible;
+    }
+
+    .cake-svg text{
+      user-select:none;
+    }
+
+    /* candles are HTML so each one can die independently */
+    .candles{
+      position:absolute;
+      z-index:25;
+      left:50%;
+      top:113px;
+      width:280px;
+      height:145px;
+      transform:translateX(-50%);
+      pointer-events:none;
+    }
+
+    .candle{
+      position:absolute;
+      width:13px;
+      height:58px;
+      border-radius:6px 6px 3px 3px;
+      background:repeating-linear-gradient(-45deg,#fff8ed 0 6px,#d84c80 6px 12px);
+      box-shadow:inset -2px 0 4px rgba(126,35,68,.13),0 4px 4px rgba(91,32,53,.11);
+      transform-origin:bottom center;
+    }
+    .candle:nth-child(1){ left:28px;  top:54px; transform:rotate(-7deg); }
+    .candle:nth-child(2){ left:70px;  top:26px; transform:rotate(-3deg); height:64px; }
+    .candle:nth-child(3){ left:114px; top:13px; transform:rotate(1deg);  height:69px; }
+    .candle:nth-child(4){ left:157px; top:14px; transform:rotate(-1deg); height:69px; }
+    .candle:nth-child(5){ left:202px; top:28px; transform:rotate(4deg);  height:64px; }
+    .candle:nth-child(6){ left:242px; top:56px; transform:rotate(7deg); }
+
+    .wick{
+      position:absolute;
+      width:2px;
+      height:12px;
+      left:50%;
+      top:-10px;
+      border-radius:3px;
+      background:#67434b;
+      transform:translateX(-50%);
+    }
+
+    .flame{
+      position:absolute;
+      width:18px;
+      height:31px;
+      left:50%;
+      top:-38px;
+      border-radius:65% 35% 61% 39% / 71% 50% 50% 29%;
+      transform-origin:50% 100%;
+      background:
+        radial-gradient(circle at 50% 70%,#fffdd4 0 12%,#ffd86a 13% 38%,#ee854f 39% 68%,#d94b65 69%);
+      box-shadow:0 0 12px #ffd56a,0 0 25px rgba(224,109,75,.43);
+      animation:flicker .32s ease-in-out infinite alternate;
+      transition:opacity .24s,transform .24s,filter .24s;
+    }
+    @keyframes flicker{
+      from{ transform:translateX(-50%) rotate(-5deg) scale(.94,1.05); }
+      to{ transform:translateX(-50%) rotate(6deg) scale(1.05,.95); }
+    }
+    .candle.out .flame{
+      opacity:0;
+      transform:translateX(-50%) translateY(11px) scale(.08);
+      filter:blur(5px);
+      animation:none;
+    }
+
+    .smoke{
+      position:absolute;
+      width:7px;
+      height:36px;
+      left:50%;
+      top:-31px;
+      border-radius:50%;
+      opacity:0;
+      filter:blur(3px);
+      background:linear-gradient(to top,rgba(96,77,82,.3),transparent);
+      transform:translateX(-50%);
+    }
+    .candle.out .smoke{ animation:smoke 1.2s ease-out forwards; }
+    @keyframes smoke{
+      0%{opacity:.72;transform:translate(-50%,9px) scale(.55)}
+      100%{opacity:0;transform:translate(calc(-50% + 12px),-34px) scale(1.65)}
+    }
+
+    .cake-instruction{
+      position:absolute;
+      left:50%;
+      bottom:29px;
+      transform:translateX(-50%) rotate(-1deg);
+      z-index:21;
+      white-space:nowrap;
+      font:italic 18px var(--serif);
+      color:#88445a;
+      background:#fffdf5;
+      padding:8px 15px 7px;
+      border-bottom:2px solid rgba(185,101,127,.45);
+    }
+
+    /* hidden letter is physically behind the cake */
+    .birthday-letter{
+      position:absolute;
+      z-index:-2;
+      left:50%;
+      top:175px;
+      width:min(430px,82vw);
+      min-height:390px;
+      padding:60px 44px 34px;
+      text-align:center;
+      background:#fffaf0;
+      border:1px solid rgba(137,64,83,.3);
+      box-shadow:0 22px 50px rgba(102,43,63,.14);
+      transform:translate(-50%,170px) rotate(1deg) scale(.89);
+      opacity:0;
+      pointer-events:none;
+      transition:
+        transform 1.35s cubic-bezier(.16,1,.3,1),
+        opacity .65s ease,
+        z-index 0s linear 1s;
+    }
+    .birthday-letter::before{
+      content:"";
+      position:absolute;
+      left:15px;
+      right:15px;
+      top:15px;
+      bottom:15px;
+      border:1px solid rgba(186,101,126,.22);
+      pointer-events:none;
+    }
+    .birthday-letter::after{
+      content:"SPECIAL BIRTHDAY EDITION";
+      position:absolute;
+      left:50%;
+      top:27px;
+      transform:translateX(-50%);
+      width:max-content;
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.22em;
+      color:#a36277;
+    }
+
+    body.celebrated .birthday-letter{
+      z-index:40;
+      opacity:1;
+      pointer-events:auto;
+      transform:translate(-50%,-68px) rotate(-1deg) scale(1);
+      transition:
+        transform 1.35s cubic-bezier(.16,1,.3,1),
+        opacity .65s ease,
+        z-index 0s;
+    }
+
+
+    .poem-letter{
+      width:min(500px,86vw);
+      padding-left:38px;
+      padding-right:38px;
+      padding-bottom:30px;
+    }
+    .poem-letter h2{
+      margin-bottom:16px;
+    }
+    .poem{
+      position:relative;
+      z-index:1;
+      text-align:left;
+      max-height:min(52vh,460px);
+      overflow:auto;
+      padding:0 8px 2px;
+      scrollbar-width:thin;
+      scrollbar-color:#d99bb0 transparent;
+    }
+    .poem p{
+      max-width:none;
+      margin:0 0 20px;
+      font:400 16px/1.52 var(--serif);
+      color:#754356;
+    }
+    .poem p:last-child{
+      margin-bottom:4px;
+    }
+    .poem .acrostic strong{
+      display:inline-block;
+      min-width:.85em;
+      color:#bd486c;
+      font-weight:600;
+    }
+
+    .letter-heart{
+      font:400 29px Georgia,serif;
+      color:#bd486c;
+    }
+    .birthday-letter h2{
+      margin:6px 0 5px;
+      font:400 clamp(53px,7vw,74px)/.9 var(--script);
+      color:#c43d70;
+    }
+    .letter-subtitle{
+      margin:3px 0 17px;
+      font:italic 21px var(--serif);
+    }
+    .birthday-letter p{
+      margin:0 auto;
+      max-width:340px;
+      font:400 17px/1.55 var(--serif);
+      color:#754356;
+    }
+    .signature{
+      margin-top:15px;
+      font:400 30px var(--script);
+      color:#c43d70;
+    }
+
+    .again{
+      margin-top:17px;
+      min-height:40px;
+      padding:0 15px;
+      border:1px solid rgba(149,71,95,.38);
+      background:transparent;
+      color:#8d4d61;
+      font:600 10px var(--sans);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+
+    /* illustrated floating bits */
+    .doodle{
+      position:absolute;
+      z-index:6;
+      pointer-events:none;
+      filter:drop-shadow(0 7px 5px rgba(105,50,66,.06));
+    }
+
+    .bow-doodle{
+      width:120px;
+      right:-18px;
+      bottom:38px;
+      transform:rotate(10deg);
+    }
+    .lipstick-doodle{
+      width:62px;
+      left:-18px;
+      top:120px;
+      transform:rotate(-13deg);
+    }
+    .mirror-doodle{
+      width:104px;
+      right:6px;
+      top:160px;
+      transform:rotate(9deg);
+    }
+
+    /* celebration debris */
+    .falling{
+      position:fixed;
+      z-index:65;
+      top:-50px;
+      pointer-events:none;
+      animation:fall var(--dur) linear forwards;
+      font-size:var(--size);
+      transform:translate3d(0,0,0) rotate(0deg);
+    }
+    @keyframes fall{
+      to{
+        transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));
+      }
+    }
+
+    .petal{
+      position:fixed;
+      z-index:65;
+      top:-40px;
+      width:14px;
+      height:22px;
+      border-radius:80% 20% 75% 25%;
+      background:#ee8eb0;
+      pointer-events:none;
+      animation:petalFall var(--dur) ease-in forwards;
+    }
+    @keyframes petalFall{
+      to{
+        transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));
+      }
+    }
+
+
+    .local-helper{
+      display:none;
+      position:fixed;
+      z-index:75;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      width:min(560px,calc(100% - 38px));
+      padding:11px 15px;
+      text-align:center;
+      background:#fff8ef;
+      border:1px solid rgba(143,66,92,.32);
+      box-shadow:0 10px 30px rgba(94,39,59,.12);
+      font:500 12px/1.4 var(--sans);
+      color:#7f4056;
+    }
+    body.local-file .local-helper{display:block}
+
+    .sr-only{
+      position:absolute!important;
+      width:1px;height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+    }
+
+    @media(max-width:900px){
+      body::before{ inset:0 20px; }
+      .page-frame{ inset:10px; }
+      .page-frame::after{ inset:4px; }
+
+      .masthead{
+        top:32px;
+        left:31px;
+        right:31px;
+      }
+      .masthead .love{font-size:21px}
+      .masthead .edition{font-size:9px;letter-spacing:.11em}
+
+      .experience{
+        padding:108px 28px 42px;
+      }
+      .spread{
+        grid-template-columns:1fr;
+        gap:5px;
+      }
+      .story{
+        text-align:center;
+      }
+      .jana{
+        transform:rotate(-2deg);
+        transform-origin:center;
+        font-size:clamp(92px,24vw,132px);
+      }
+      .birthday-type{
+        font-size:clamp(38px,10vw,52px);
+      }
+      .intro{
+        margin-inline:auto;
+        max-width:560px;
+      }
+      .scrap-row{
+        width:min(470px,100%);
+        margin-inline:auto;
+      }
+      .ritual{
+        justify-content:center;
+      }
+      .status-card{text-align:left}
+      .cake-scene{
+        min-height:600px;
+        margin-top:-12px;
+      }
+      .cake-caption{right:5%}
+      .cake-caption.bottom{left:4%}
+      .corner-flower{opacity:.55}
+    }
+
+    @media(max-width:540px){
+      body{
+        background-size:48px 100%;
+      }
+      .experience{
+        padding:104px 22px 34px;
+      }
+      .special{font-size:10px}
+      .intro{font-size:17px}
+      .scrap-row{
+        height:135px;
+        transform:scale(.9);
+        transform-origin:top center;
+        margin-bottom:-3px;
+      }
+      .note.one{left:3px}
+      .note.two{left:155px}
+      .note.three{left:310px}
+      .ritual{
+        margin-top:0;
+        gap:10px;
+      }
+      .wish-button{
+        width:115px;
+        height:115px;
+        flex-basis:115px;
+      }
+      .status-card{
+        flex-basis:205px;
+        padding:16px 15px 13px 20px;
+      }
+      #statusText{font-size:15px}
+      .cake-scene{
+        min-height:520px;
+        width:calc(100% + 24px);
+        margin-left:-12px;
+      }
+      .paper-oval{
+        width:112%;
+        height:510px;
+      }
+      .checker{
+        width:510px;
+        height:510px;
+      }
+      .cake-wrap{
+        width:100%;
+        height:500px;
+        margin-top:20px;
+      }
+      .candles{
+        top:101px;
+        width:252px;
+        transform:translateX(-50%) scale(.9);
+      }
+      .cake-instruction{
+        bottom:20px;
+        font-size:16px;
+      }
+      .cake-caption{
+        width:122px;
+        font-size:13px;
+        top:41px;
+        right:-1px;
+      }
+      .cake-caption.bottom{
+        bottom:53px;
+        left:-1px;
+      }
+
+      .poem-letter{
+        width:min(420px,92vw);
+        padding-left:25px;
+        padding-right:25px;
+      }
+      .poem{
+        max-height:48vh;
+        padding:0 3px;
+      }
+      .poem p{
+        font-size:15px;
+        line-height:1.48;
+        margin-bottom:17px;
+      }
+
+      .birthday-letter{
+        top:150px;
+        width:min(390px,91vw);
+        padding:53px 27px 28px;
+      }
+      body.celebrated .birthday-letter{
+        transform:translate(-50%,-45px) rotate(-1deg) scale(1);
+      }
+      .birthday-letter p{font-size:16px}
+      .bow-doodle{width:92px;right:-7px}
+      .lipstick-doodle{width:48px;left:3px}
+      .mirror-doodle{width:82px;right:-3px}
+      .corner-flower{width:125px}
+    }
+
+    @media(max-width:380px){
+      .masthead .edition{display:none}
+      .scrap-row{transform:scale(.78);width:430px;margin-left:50%;translate:-50% 0;margin-bottom:-24px}
+      .ritual{flex-direction:column}
+      .status-card{width:100%}
+      .cake-scene{min-height:485px}
+      .cake-wrap{height:455px}
+      .candles{top:88px;transform:translateX(-50%) scale(.78)}
+      .cake-caption{display:none}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-frame" aria-hidden="true"></div>
+
+  <!-- hand-drawn style flower corners -->
+  <svg class="corner-flower left" viewBox="0 0 180 230" aria-hidden="true">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M70 232 C70 172 100 112 130 47" stroke="#66815e" stroke-width="4"/>
+      <path d="M79 185 C51 176 32 153 20 128" stroke="#66815e" stroke-width="3"/>
+      <path d="M92 151 C122 140 143 118 158 93" stroke="#66815e" stroke-width="3"/>
+      <path d="M87 168 C68 153 58 137 55 117 C79 121 93 140 87 168Z" fill="#8cab75" stroke="#66815e" stroke-width="2"/>
+      <path d="M106 127 C113 101 131 84 155 78 C153 103 136 121 106 127Z" fill="#7da56a" stroke="#66815e" stroke-width="2"/>
+      <path d="M48 147 C27 137 15 119 12 99 C36 101 53 120 48 147Z" fill="#92ae76" stroke="#66815e" stroke-width="2"/>
+      <g transform="translate(127 44)">
+        <circle cx="0" cy="0" r="13" fill="#f0afbd" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M0-29 C13-22 18-11 13 0 C5-6-1-14 0-29Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M27-7 C25 8 17 16 5 14 C10 4 16-3 27-7Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M17 21 C5 30-7 28-13 18 C-2 16 7 16 17 21Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M-22 15 C-31 2-28-10-17-15 C-14-4-14 6-22 15Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M-17-20 C-3-27 8-23 12-12 C2-10-8-11-17-20Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+      </g>
+    </g>
+  </svg>
+
+  <svg class="corner-flower right" viewBox="0 0 180 230" aria-hidden="true">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M70 232 C70 172 100 112 130 47" stroke="#66815e" stroke-width="4"/>
+      <path d="M79 185 C51 176 32 153 20 128" stroke="#66815e" stroke-width="3"/>
+      <path d="M92 151 C122 140 143 118 158 93" stroke="#66815e" stroke-width="3"/>
+      <path d="M87 168 C68 153 58 137 55 117 C79 121 93 140 87 168Z" fill="#8cab75" stroke="#66815e" stroke-width="2"/>
+      <path d="M106 127 C113 101 131 84 155 78 C153 103 136 121 106 127Z" fill="#7da56a" stroke="#66815e" stroke-width="2"/>
+      <g transform="translate(127 44)">
+        <circle cx="0" cy="0" r="13" fill="#f0afbd" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M0-29 C13-22 18-11 13 0 C5-6-1-14 0-29Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M27-7 C25 8 17 16 5 14 C10 4 16-3 27-7Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M17 21 C5 30-7 28-13 18 C-2 16 7 16 17 21Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+        <path d="M-22 15 C-31 2-28-10-17-15 C-14-4-14 6-22 15Z" fill="#f5c6cf" stroke="#b64d6e" stroke-width="2"/>
+      </g>
+    </g>
+  </svg>
+
+  <header class="masthead">
+    <span class="love">For Jana, with love</span>
+    <span class="edition">Birthday edition · September 2026</span>
+  </header>
+
+  <main class="experience">
+    <div class="spread">
+
+      <section class="story" aria-label="Birthday message">
+        <p class="special">A very special birthday delivery</p>
+        <h1 class="jana">Jana</h1>
+
+        <h2 class="birthday-type">
+          today, the world is<br>
+          <em>a little more yours.</em>
+        </h2>
+
+        <p class="intro">
+          So there is only one proper way to begin:
+          candles, a ridiculous amount of pink frosting,
+          and one wish I hope the universe takes very seriously.
+        </p>
+
+        <div class="scrap-row" aria-hidden="true">
+          <div class="note one">birthday rule no. 1:<br><strong>you get the biggest slice.</strong></div>
+          <div class="note two">for the prettiest girl<br>on her prettiest day ♡</div>
+          <div class="note three">make<br>a<br>wish!</div>
+        </div>
+
+        <div class="ritual">
+          <button class="wish-button" id="micButton" type="button">
+            <span>tap me, then blow the candles</span>
+          </button>
+
+          <div class="status-card" aria-live="polite">
+            <span class="status-label">the birthday ritual</span>
+            <span id="statusText">Tap the heart seal and let the page hear you.</span>
+            <div class="blow-hearts" id="blowHearts" aria-hidden="true">
+              <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cake-scene" aria-label="Interactive birthday cake">
+        <div class="paper-oval" aria-hidden="true"></div>
+        <div class="checker" aria-hidden="true"></div>
+
+        <div class="cake-caption">hand-piped,<br>overdressed &<br>exactly right</div>
+        <div class="cake-caption bottom">Jana’s<br>birthday cake ♡</div>
+
+        <!-- lipstick doodle -->
+        <svg class="doodle lipstick-doodle" viewBox="0 0 90 180" aria-hidden="true">
+          <g stroke="#8a3d55" stroke-width="3" stroke-linejoin="round">
+            <path d="M37 34 L57 17 L63 24 L51 65 Z" fill="#c44570"/>
+            <path d="M30 64 L54 64 L60 106 L27 106 Z" fill="#f1abc2"/>
+            <path d="M26 104 L61 104 L67 154 L20 154 Z" fill="#f8e2df"/>
+            <path d="M20 153 L67 153 L67 166 L20 166 Z" fill="#d47d9b"/>
+          </g>
+        </svg>
+
+        <!-- handheld mirror doodle -->
+        <svg class="doodle mirror-doodle" viewBox="0 0 120 190" aria-hidden="true">
+          <g stroke="#96526b" stroke-width="3" fill="none">
+            <ellipse cx="58" cy="60" rx="39" ry="47" fill="#f8d7df"/>
+            <ellipse cx="58" cy="60" rx="29" ry="36" fill="#f4f3ed"/>
+            <path d="M53 105 L51 164 Q58 177 65 164 L63 105Z" fill="#f2b4ca"/>
+            <path d="M46 165 Q58 181 70 165" />
+            <path d="M42 41 Q58 27 73 41" stroke="#fff" opacity=".75"/>
+          </g>
+        </svg>
+
+        <!-- ribbon bow doodle -->
+        <svg class="doodle bow-doodle" viewBox="0 0 180 120" aria-hidden="true">
+          <g stroke="#a44765" stroke-width="3" stroke-linejoin="round">
+            <path d="M85 52 C58 13 19 10 15 42 C12 66 42 77 82 60Z" fill="#ef9fba"/>
+            <path d="M95 52 C122 13 161 10 165 42 C168 66 138 77 98 60Z" fill="#ef9fba"/>
+            <path d="M88 62 L58 111 L84 98 L99 113 L95 64Z" fill="#f5bdcd"/>
+            <path d="M94 62 L120 111 L100 98 L86 113 L89 64Z" fill="#f5bdcd"/>
+            <ellipse cx="91" cy="58" rx="19" ry="15" fill="#d96a92"/>
+          </g>
+        </svg>
+
+        <div class="birthday-letter poem-letter" id="birthdayLetter">
+          <div class="letter-heart">♡</div>
+          <h2>Sonceto Moe</h2>
+
+          <div class="poem">
+            <p>
+              A ray of light even in the dark,<br>
+              a smile of hope that lights a spark,<br>
+              a beauty no words can describe,<br>
+              eyes more ethereal than any galaxy,<br>
+              she makes you question reality,<br>
+              my love my life my sun.
+            </p>
+
+            <p>
+              A caring mind like no other,<br>
+              and every day she makes me wonder,<br>
+              how could i have found such love,<br>
+              that i could have never dreamed of,<br>
+              in world filled with such despair,<br>
+              i found someone something so rare,<br>
+              my love my life my sun.
+            </p>
+
+            <p class="acrostic">
+              <span><strong>J</strong>ovial her nature always is,</span><br>
+              <span><strong>A</strong> gaze that pierced my heart with bliss,</span><br>
+              <span><strong>N</strong>urturing is her smile so,</span><br>
+              <span><strong>A</strong> calm more beautiful than any meadow,</span><br>
+              my love my life my sun.
+            </p>
+          </div>
+
+          <button class="again" id="restartButton" type="button">make another wish</button>
+        </div>
+
+        <div class="cake-wrap">
+          <svg class="cake-svg" viewBox="0 0 560 570" role="img" aria-label="Ornate pink heart-shaped birthday cake with bows, cherries, pearls and Barbie-inspired fashion motifs">
+            <defs>
+              <filter id="rough">
+                <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="2" seed="4" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2"/>
+              </filter>
+
+              <filter id="cakeShadow" x="-30%" y="-30%" width="160%" height="180%">
+                <feDropShadow dx="0" dy="12" stdDeviation="9" flood-color="#773047" flood-opacity=".19"/>
+              </filter>
+
+              <linearGradient id="sidePink" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e986ab"/>
+                <stop offset="1" stop-color="#cf557f"/>
+              </linearGradient>
+
+              <linearGradient id="topPink" x1="0" y1="0" x2="0.9" y2="1">
+                <stop offset="0" stop-color="#f8b5cd"/>
+                <stop offset=".55" stop-color="#ef91b3"/>
+                <stop offset="1" stop-color="#e17ca2"/>
+              </linearGradient>
+
+              <pattern id="fashionPrint" width="76" height="66" patternUnits="userSpaceOnUse">
+                <rect width="76" height="66" fill="transparent"/>
+                <text x="9" y="25" font-family="Georgia,serif" font-size="17" font-style="italic" fill="#fff7f0" opacity=".72">B</text>
+                <path d="M41 15 C34 6 22 12 24 22 C26 31 41 38 41 38 C41 38 56 31 58 22 C60 12 48 6 41 15Z"
+                      fill="none" stroke="#fff7f0" stroke-width="1.5" opacity=".58"/>
+                <path d="M10 48 q12 -12 24 0 q-12 11 -24 0Z" fill="none" stroke="#fff7f0" stroke-width="1.5" opacity=".58"/>
+                <path d="M48 48 l7 -7 l7 7 l-7 9Z" fill="#fff7f0" opacity=".48"/>
+              </pattern>
+
+              <!-- top heart path used repeatedly -->
+              <path id="heart"
+                d="M280 182
+                   C240 118 146 110 111 169
+                   C68 241 129 320 280 400
+                   C431 320 492 241 449 169
+                   C414 110 320 118 280 182Z"/>
+            </defs>
+
+            <!-- cake stand -->
+            <g filter="url(#cakeShadow)">
+              <ellipse cx="280" cy="471" rx="225" ry="42" fill="#f6d7df" stroke="#ad657e" stroke-width="2"/>
+              <ellipse cx="280" cy="463" rx="215" ry="35" fill="#fff8f1" stroke="#c7889a" stroke-width="2"/>
+              <path d="M227 488 C232 522 241 535 260 541 L300 541 C319 535 328 522 333 488Z"
+                    fill="#f2c7d6" stroke="#ad657e" stroke-width="2"/>
+              <ellipse cx="280" cy="541" rx="91" ry="18" fill="#fff8f1" stroke="#ad657e" stroke-width="2"/>
+            </g>
+
+            <!-- side / depth -->
+            <g transform="translate(0 57)" filter="url(#cakeShadow)">
+              <use href="#heart" fill="url(#sidePink)" stroke="#a94768" stroke-width="3"/>
+              <use href="#heart" fill="url(#fashionPrint)" opacity=".72"/>
+            </g>
+
+            <!-- side swags -->
+            <g fill="none" stroke="#ffdce8" stroke-width="8" stroke-linecap="round" opacity=".92">
+              <path d="M121 302 Q163 339 205 306"/>
+              <path d="M204 350 Q244 382 281 350"/>
+              <path d="M281 350 Q319 382 359 350"/>
+              <path d="M356 306 Q400 339 441 300"/>
+            </g>
+            <g fill="#fff0f5" stroke="#c85d82" stroke-width="1.2">
+              <circle cx="122" cy="302" r="7"/><circle cx="205" cy="306" r="7"/>
+              <circle cx="204" cy="350" r="7"/><circle cx="281" cy="350" r="7"/>
+              <circle cx="359" cy="350" r="7"/><circle cx="441" cy="300" r="7"/>
+            </g>
+
+            <!-- top -->
+            <g filter="url(#rough)">
+              <use href="#heart" fill="url(#topPink)" stroke="#ab4869" stroke-width="3"/>
+            </g>
+
+            <!-- outer piped borders -->
+            <use href="#heart" fill="none" stroke="#f8d7e2" stroke-width="23"
+                 stroke-linecap="round" stroke-dasharray="1 17" transform="scale(.985) translate(4 4)"/>
+            <use href="#heart" fill="none" stroke="#fff7ee" stroke-width="13"
+                 stroke-linecap="round" stroke-dasharray="1 13" transform="scale(.925) translate(22 21)"/>
+
+            <!-- inner frame -->
+            <path d="M280 215
+                     C244 158 169 153 142 200
+                     C113 251 159 307 280 369
+                     C401 307 447 251 418 200
+                     C391 153 316 158 280 215Z"
+                  fill="#f3a8c2"
+                  stroke="#f9dbe5"
+                  stroke-width="10"
+                  stroke-dasharray="1 15"
+                  stroke-linecap="round"/>
+
+            <!-- pearl heart ring -->
+            <path d="M280 231
+                     C249 184 188 182 163 217
+                     C136 258 180 303 280 354
+                     C380 303 424 258 397 217
+                     C372 182 311 184 280 231Z"
+                  fill="#ef91b3"
+                  stroke="#fff8f2"
+                  stroke-width="7"
+                  stroke-dasharray="1 12"
+                  stroke-linecap="round"/>
+
+            <!-- central plaque -->
+            <path d="M280 236
+                     C253 197 194 195 171 232
+                     C145 274 190 323 280 367
+                     C370 323 415 274 389 232
+                     C366 195 307 197 280 236Z"
+                  fill="#f8dfe8"
+                  stroke="#b95679"
+                  stroke-width="2"/>
+
+            <path d="M280 248
+                     C257 216 209 214 191 241
+                     C171 272 208 310 280 345
+                     C352 310 389 272 369 241
+                     C351 214 303 216 280 248Z"
+                  fill="none"
+                  stroke="#f3bfd0"
+                  stroke-width="3"
+                  stroke-dasharray="1 10"
+                  stroke-linecap="round"/>
+
+            <text x="280" y="274" text-anchor="middle"
+                  font-family="Great Vibes, cursive" font-size="45" fill="#b93f68">Jana</text>
+            <text x="280" y="304" text-anchor="middle"
+                  font-family="DM Sans, sans-serif" font-size="8.8" font-weight="700"
+                  letter-spacing="3.4" fill="#9b4c68">BIRTHDAY BARBIE</text>
+            <text x="280" y="326" text-anchor="middle"
+                  font-family="Cormorant Garamond, serif" font-size="15" font-style="italic"
+                  fill="#9b4c68">special edition</text>
+
+            <!-- frosting rosettes -->
+            <g fill="#f8cada" stroke="#bc5277" stroke-width="1.5">
+              <g transform="translate(136 221)">
+                <circle r="17"/><path d="M-8 0 Q0-13 8 0 Q0 13-8 0Z" fill="#fff0f5"/>
+              </g>
+              <g transform="translate(424 221)">
+                <circle r="17"/><path d="M-8 0 Q0-13 8 0 Q0 13-8 0Z" fill="#fff0f5"/>
+              </g>
+              <g transform="translate(280 385)">
+                <circle r="18"/><path d="M-8 0 Q0-13 8 0 Q0 13-8 0Z" fill="#fff0f5"/>
+              </g>
+            </g>
+
+            <!-- cherries -->
+            <g stroke="#7f664f" stroke-width="2.2" fill="none" stroke-linecap="round">
+              <path d="M151 201 Q151 174 170 166"/>
+              <path d="M409 201 Q409 174 391 166"/>
+              <path d="M196 165 Q201 140 218 136"/>
+              <path d="M364 165 Q359 140 342 136"/>
+            </g>
+            <g fill="#a82d43" stroke="#7d2437" stroke-width="1.7">
+              <circle cx="151" cy="204" r="12"/>
+              <circle cx="409" cy="204" r="12"/>
+              <circle cx="195" cy="168" r="11"/>
+              <circle cx="365" cy="168" r="11"/>
+            </g>
+            <g fill="#fff" opacity=".55">
+              <circle cx="147" cy="200" r="3"/>
+              <circle cx="405" cy="200" r="3"/>
+              <circle cx="191" cy="164" r="2.6"/>
+              <circle cx="361" cy="164" r="2.6"/>
+            </g>
+
+            <!-- satin-style bows -->
+            <g stroke="#ad4667" stroke-width="2">
+              <g transform="translate(111 290) rotate(-25)">
+                <path d="M0 0 C-27-22-45-2-23 13 C-11 21-3 12 0 4Z" fill="#f4b4c9"/>
+                <path d="M4 0 C31-22 49-2 27 13 C15 21 7 12 4 4Z" fill="#f4b4c9"/>
+                <path d="M2 11 L-11 40 L3 32 L12 45 L8 12Z" fill="#ef9eb9"/>
+                <ellipse cx="2" cy="7" rx="8" ry="6" fill="#d65f87"/>
+              </g>
+              <g transform="translate(449 290) rotate(25)">
+                <path d="M0 0 C-27-22-45-2-23 13 C-11 21-3 12 0 4Z" fill="#f4b4c9"/>
+                <path d="M4 0 C31-22 49-2 27 13 C15 21 7 12 4 4Z" fill="#f4b4c9"/>
+                <path d="M2 11 L-11 40 L3 32 L12 45 L8 12Z" fill="#ef9eb9"/>
+                <ellipse cx="2" cy="7" rx="8" ry="6" fill="#d65f87"/>
+              </g>
+              <g transform="translate(280 150)">
+                <path d="M0 0 C-26-21-44-2-22 12 C-10 20-3 12 0 4Z" fill="#f4b4c9"/>
+                <path d="M4 0 C30-21 48-2 26 12 C14 20 7 12 4 4Z" fill="#f4b4c9"/>
+                <ellipse cx="2" cy="7" rx="8" ry="6" fill="#d65f87"/>
+              </g>
+            </g>
+
+            <!-- pearls scattered -->
+            <g fill="#fff9f1" stroke="#d79caf" stroke-width="1">
+              <circle cx="181" cy="250" r="5"/><circle cx="198" cy="271" r="4"/>
+              <circle cx="379" cy="251" r="5"/><circle cx="362" cy="271" r="4"/>
+              <circle cx="229" cy="343" r="4"/><circle cx="331" cy="343" r="4"/>
+              <circle cx="250" cy="191" r="4"/><circle cx="310" cy="191" r="4"/>
+            </g>
+
+            <!-- tiny star sparkles -->
+            <g fill="#fff8eb" opacity=".92">
+              <path d="M182 195 l4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
+              <path d="M382 195 l3 6 6 3-6 3-3 6-3-6-6-3 6-3Z"/>
+              <path d="M337 328 l3 6 6 3-6 3-3 6-3-6-6-3 6-3Z"/>
+            </g>
+          </svg>
+
+          <div class="candles" id="candles" aria-hidden="true">
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="wick"></span><span class="flame"></span><span class="smoke"></span></div>
+          </div>
+
+          <div class="cake-instruction">blow them all out, birthday girl ♡</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+  <div class="local-helper" id="localHelper">
+    Laptop microphone mode: open this folder with <strong>run-on-laptop.sh</strong>, then use the page that opens in your browser.
+  </div>
+
+  <script>
+  (() => {
+    if(location.protocol === "file:") document.body.classList.add("local-file");
+    const micButton = document.getElementById("micButton");
+    const statusText = document.getElementById("statusText");
+    const candleEls = [...document.querySelectorAll(".candle")];
+    const blowHearts = [...document.querySelectorAll("#blowHearts span")];
+    const restartButton = document.getElementById("restartButton");
+
+    let audioContext = null;
+    let analyser = null;
+    let stream = null;
+    let frameId = null;
+
+    let ambient = .012;
+    let blowThreshold = .055;
+    let calibratingUntil = 0;
+    let calibrated = false;
+    let active = false;
+    let aboveSince = 0;
+    let lastBlowAt = 0;
+    let remaining = candleEls.length;
+
+    function setStatus(text){
+      statusText.textContent = text;
+    }
+
+    function rmsOf(data){
+      let sum = 0;
+      for(let i=0;i<data.length;i++){
+        const x = data[i] / 128 - 1;
+        sum += x*x;
+      }
+      return Math.sqrt(sum/data.length);
+    }
+
+    function showLevel(rms){
+      const ratio = Math.min(1, rms / Math.max(blowThreshold * 1.2, .045));
+      const lit = Math.round(ratio * blowHearts.length);
+      blowHearts.forEach((h,i)=>{
+        h.classList.toggle("hot", i < lit);
+        h.textContent = i < lit ? "♥" : "♡";
+      });
+    }
+
+    function extinguish(count=1){
+      const lit = candleEls.filter(c => !c.classList.contains("out"));
+      if(!lit.length) return;
+
+      lit.slice(0,count).forEach((c,i)=>{
+        setTimeout(()=>{
+          c.classList.add("out");
+          remaining = candleEls.filter(x => !x.classList.contains("out")).length;
+
+          if(navigator.vibrate) navigator.vibrate(18);
+
+          if(remaining > 0){
+            setStatus(`${remaining} candle${remaining===1?"":"s"} left — keep going ♡`);
+          }else{
+            celebrate();
+          }
+        },i*120);
+      });
+    }
+
+    function celebrate(){
+      active = false;
+      setStatus("Wish made. Now look behind the cake… ♡");
+      document.body.classList.add("celebrated");
+      makeCelebration();
+      if(navigator.vibrate) navigator.vibrate([35,45,90]);
+    }
+
+    function makeCelebration(){
+      const symbols = ["♡","✦","🎀","♥","✧"];
+      const colors = ["#b83e63","#e97fa8","#f5c0d1","#d9a75a"];
+
+      for(let i=0;i<34;i++){
+        const el = document.createElement("span");
+        el.className = "falling";
+        el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+        el.style.left = Math.random()*100+"vw";
+        el.style.color = colors[Math.floor(Math.random()*colors.length)];
+        el.style.setProperty("--dur",(3+Math.random()*2.4)+"s");
+        el.style.setProperty("--size",(15+Math.random()*16)+"px");
+        el.style.setProperty("--drift",((Math.random()-.5)*220)+"px");
+        el.style.setProperty("--spin",((Math.random()-.5)*1000)+"deg");
+        el.style.animationDelay=(Math.random()*.5)+"s";
+        document.body.appendChild(el);
+        setTimeout(()=>el.remove(),6200);
+      }
+
+      for(let i=0;i<36;i++){
+        const p=document.createElement("i");
+        p.className="petal";
+        p.style.left=Math.random()*100+"vw";
+        p.style.opacity=.5+Math.random()*.45;
+        p.style.setProperty("--dur",(3.2+Math.random()*2.5)+"s");
+        p.style.setProperty("--drift",((Math.random()-.5)*280)+"px");
+        p.style.setProperty("--spin",((Math.random()-.5)*900)+"deg");
+        p.style.animationDelay=(Math.random()*.7)+"s";
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(),6500);
+      }
+    }
+
+    function analyze(){
+      if(!analyser) return;
+
+      const data = new Uint8Array(analyser.fftSize);
+      analyser.getByteTimeDomainData(data);
+      const rms = rmsOf(data);
+      const now = performance.now();
+
+      showLevel(rms);
+
+      if(now < calibratingUntil){
+        ambient = ambient*.88 + rms*.12;
+        setStatus("One second… I’m listening to the room.");
+      }else if(!calibrated){
+        calibrated = true;
+        blowThreshold = Math.max(ambient*3.0,.05);
+        active = true;
+        setStatus("Ready. Make a wish and blow toward your phone ♡");
+      }else if(active){
+        if(rms > blowThreshold){
+          if(!aboveSince) aboveSince = now;
+          const held = now - aboveSince;
+
+          if(held > 105 && now-lastBlowAt > 710){
+            lastBlowAt = now;
+            aboveSince = 0;
+
+            const strength = rms/blowThreshold;
+            const count = strength > 2.25 ? 3 : strength > 1.48 ? 2 : 1;
+            extinguish(count);
+          }
+        }else{
+          aboveSince = 0;
+        }
+      }
+
+      frameId = requestAnimationFrame(analyze);
+    }
+
+    async function startMic(){
+      if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+        if(location.protocol === "file:"){
+          setStatus("For microphone blowing on a laptop, open this site with the included laptop launcher.");
+        }else{
+          setStatus("Please open this page in Chrome so I can hear your wish.");
+        }
+        return;
+      }
+
+      try{
+        micButton.disabled = true;
+        micButton.querySelector("span").textContent = "microphone is listening";
+        setStatus("Opening the microphone…");
+
+        stream = await navigator.mediaDevices.getUserMedia({
+          audio:{
+            echoCancellation:false,
+            noiseSuppression:false,
+            autoGainControl:false
+          }
+        });
+
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if(audioContext.state==="suspended") await audioContext.resume();
+
+        const source = audioContext.createMediaStreamSource(stream);
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 1024;
+        analyser.smoothingTimeConstant = .25;
+        source.connect(analyser);
+
+        ambient=.012;
+        calibrated=false;
+        active=false;
+        aboveSince=0;
+        calibratingUntil=performance.now()+1200;
+
+        analyze();
+      }catch(err){
+        console.error(err);
+        micButton.disabled=false;
+        micButton.querySelector("span").textContent="tap me, then blow the candles";
+        if(location.protocol === "file:"){
+          setStatus("Laptop microphone needs localhost. Close this tab and use run-on-laptop.sh.");
+        }else{
+          setStatus("I need microphone permission first — allow it, then tap the seal again.");
+        }
+      }
+    }
+
+    function reset(){
+      document.body.classList.remove("celebrated");
+      candleEls.forEach(c=>c.classList.remove("out"));
+      remaining=candleEls.length;
+      lastBlowAt=0;
+      aboveSince=0;
+      blowHearts.forEach(h=>{
+        h.classList.remove("hot");
+        h.textContent="♡";
+      });
+
+      if(analyser){
+        ambient=.012;
+        calibrated=false;
+        active=false;
+        calibratingUntil=performance.now()+850;
+        setStatus("Another wish? Give me one second…");
+      }else{
+        micButton.disabled=false;
+        micButton.querySelector("span").textContent="tap me, then blow the candles";
+        setStatus("Tap the heart seal and let the page hear you.");
+      }
+    }
+
+    micButton.addEventListener("click",startMic);
+    restartButton.addEventListener("click",reset);
+
+    window.addEventListener("pagehide",()=>{
+      if(frameId) cancelAnimationFrame(frameId);
+      if(stream) stream.getTracks().forEach(t=>t.stop());
+      if(audioContext && audioContext.state!=="closed") audioContext.close().catch(()=>{});
+    });
+
+    // Desktop test shortcut.
+    window.addEventListener("keydown",e=>{
+      if((e.key==="b"||e.key==="B") && !document.body.classList.contains("celebrated")){
+        extinguish(2);
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
